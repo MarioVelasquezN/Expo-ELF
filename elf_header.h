@@ -22,9 +22,9 @@ struct ELF_HEADER{
     uint32_t e_phnum;//Este miembro contiene el número de entradas en la tabla de encabezado del programa. 
     //Por lo tanto, el producto ofe_phentsizeande_phnum da el tamaño de la tabla en bytes. 
     //Si un archivo no tiene una tabla de encabezado de programa, e_phnumholds el valor cero.
-    uint32_t e_shentsize;//
-    uint32_t e_shnum;//
-    uint32_t e_shstrndx;//
+    uint32_t e_shentsize;//Este miembro tiene un tamaño de encabezado de sección en bytes. Un encabezado de sección es una entrada en la tabla de encabezado de sección; Todas las entradas son del mismo tamaño.
+    uint32_t e_shnum;//Este miembro contiene el número de entradas en la tabla de encabezado de sección. Por lo tanto, productofe_shentsizeande_shnum da el tamaño de la tabla de encabezado de sección en bytes. Si un archivo no tiene una tabla de encabezado de sección, e_shnum contiene el valor cero.
+    uint32_t e_shstrndx;//Este miembro contiene el índice de la tabla de encabezado de sección de la entrada asociada con la tabla de cadenas de nombre de sección. Si el archivo no tiene una tabla de cadenas de nombre de sección, este miembro tiene el valor SHN_UNDEF. Consulte "Secciones" y "Tabla de cadenas" a continuación para obtener más información.
 
 };
 #pragma pack(pop);
